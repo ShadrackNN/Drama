@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_main_name">Kenyan TV Drama</string>
+    <string name="app_name">Movies</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Kenyan Drama TV</string>
+    <string name="nav_header_subtitle">dramatv@creativeproductions.co.ke</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_user">User</string>
+    <string name="action_search">Search</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_movies"
+            android:icon="@drawable/ic_movie_black_24dp"
+            android:title="Movies" />
+        <item
+            android:id="@+id/nav_poems"
+            android:icon="@drawable/ic_mic_black_24dp"
+            android:title="Poems" />
+        <item
+            android:id="@+id/nav_films"
+            android:icon="@drawable/ic_video_library_black_24dp"
+            android:title="Films" />
+        <item
+            android:id="@+id/nav_comedy"
+            android:icon="@drawable/ic_mood_black_24dp"
+            android:title="Comedy" />
+    </group>
+    <group>
+
+        <item android:title="African">
+            <menu>
+                <item
+                android:id="@+id/nav_folkSongs"
+                android:icon="@drawable/ic_library_music_black_24dp"
+                android:title="Folk Songs" />
+                <item
+                android:id="@+id/nav_folkDances"
+                android:icon="@drawable/ic_ondemand_video_black_24dp"
+                android:title="Dances" />
+            </menu>
+        </item>
+
+        <item android:title="Communicate">
+            <menu>
+                <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+                <item
+                android:id="@+id/nav_rating"
+                android:icon="@drawable/ic_star_black_24dp"
+
+                android:title="Rate us" />
+            </menu>
+        </item>
+    </group>
+</menu>
