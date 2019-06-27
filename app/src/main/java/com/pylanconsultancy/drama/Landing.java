@@ -32,7 +32,7 @@ public class Landing extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Please login to add a new movie", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -63,7 +63,7 @@ public class Landing extends AppCompatActivity
         getMenuInflater().inflate(R.menu.landing, menu);
         return true;
     }
-
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

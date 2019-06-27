@@ -11,39 +11,46 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/relativeLayoutLanding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <VideoView
-                android:id="@+id/videoView"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="15dp"/>
-
             <TextureView
+                android:id="@+id/adTextureView"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
-        </LinearLayout>
+                android:layout_height="200dp" />
+
+            <GridView
+                android:id="@+id/customgrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/moviesTitleHome"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:numColumns="2" />
+
+            <TextView
+                android:id="@+id/moviesTitleHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adTextureView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorAccent"
+                android:text="@string/latest_movies"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+        </RelativeLayout>
+
 
     </androidx.core.widget.NestedScrollView>
 
