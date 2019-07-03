@@ -31,7 +31,7 @@
                 android:icon="@drawable/ic_library_music_black_24dp"
                 android:title="Folk Songs" />
                 <item
-                android:id="@+id/nav_folkDances"
+                android:id="@+id/nav_dances"
                 android:icon="@drawable/ic_ondemand_video_black_24dp"
                 android:title="Dances" />
             </menu>

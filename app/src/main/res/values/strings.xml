@@ -11,4 +11,12 @@
     <string name="action_user">User</string>
     <string name="action_search">Search</string>
     <string name="latest_movies">Latest Movies</string>
+    <string name="latest_poems">Latest Poems</string>
+    <string name="comedy_centre">Comedy Centre</string>
+    <string name="moviesHeader">Latest Movies</string>
+    <string name="poemsHeader">Latest Poems</string>
+    <string name="filmsHeader">Latest Films</string>
+    <string name="comedyHeader">Comedy Centre</string>
+    <string name="folksongHeader">Latest Folksongs</string>
+    <string name="dancesHeader">Trending Dances</string>
 </resources>
