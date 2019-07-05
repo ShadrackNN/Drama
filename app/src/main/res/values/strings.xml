@@ -19,4 +19,14 @@
     <string name="comedyHeader">Comedy Centre</string>
     <string name="folksongHeader">Latest Folksongs</string>
     <string name="dancesHeader">Trending Dances</string>
+    <string name="folk_songs">Folk Songs</string>
+    <string name="african">African</string>
+    <string name="comedy">Comedy</string>
+    <string name="films">Films</string>
+    <string name="poems">Poems</string>
+    <string name="share">Share</string>
+    <string name="communicate">Communicate</string>
+    <string name="rate_us">Rate us</string>
+    <string name="dances">Dances</string>
+    <string name="movies">Movies</string>
 </resources>

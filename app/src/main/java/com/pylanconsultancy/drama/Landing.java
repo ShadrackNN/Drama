@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.TextureView;
 import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
@@ -38,6 +39,8 @@ public class Landing extends AppCompatActivity
     //GridView Object
     private GridView gridView;
 
+    public TextureView textureView;
+
     //ArrayList for Storing video urls and titles
     private static ArrayList<String> movies;
     private static ArrayList<String> movie_url;
@@ -55,6 +58,13 @@ public class Landing extends AppCompatActivity
 
         movies = new ArrayList<>();
         movie_url = new ArrayList<>();
+
+        textureView = findViewById(R.id.adTextureView);
+        textureView.getSurfaceTextureListener();
+
+
+
+
 
 
         //Calling the getData method
@@ -138,35 +148,24 @@ public class Landing extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_movies) {
-            // Take user to movies page
-            setContentView(R.layout.activity_landing);
-            sectionHeading.setText(getString(R.string.moviesHeader));
-
-        } else if (id == R.id.nav_poems) {
+        if (id == R.id.nav_poems) {
             // Take user to Poems page
-            setContentView(R.layout.activity_poems);
-            sectionHeading.setText(getString(R.string.poemsHeader));
+
 
         } else if (id == R.id.nav_films) {
             // Take user to Films page
-            setContentView(R.layout.activity_films);
-            sectionHeading.setText(getString(R.string.filmsHeader));
+
 
         } else if (id == R.id.nav_comedy) {
             // Take user to Comedy page
-            setContentView(R.layout.activity_comedy);
-            sectionHeading.setText(getString(R.string.comedyHeader));
+
 
         } else if (id == R.id.nav_folkSongs) {
             // Take user to Folk Songs UI
-            setContentView(R.layout.activity_folksongs);
-            sectionHeading.setText(getString(R.string.folksongHeader));
+
 
         } else if (id == R.id.nav_dances) {
             // Take user to Folk Dances page
-            setContentView(R.layout.activity_dances);
-            sectionHeading.setText(getString(R.string.dancesHeader));
 
         }  else if (id == R.id.nav_share) {
             // Provide user with options through which they can share app.

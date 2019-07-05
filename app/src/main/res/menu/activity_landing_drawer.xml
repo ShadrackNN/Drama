@@ -8,46 +8,46 @@
         <item
             android:id="@+id/nav_movies"
             android:icon="@drawable/ic_movie_black_24dp"
-            android:title="Movies" />
+            android:title="@string/movies" />
         <item
             android:id="@+id/nav_poems"
             android:icon="@drawable/ic_mic_black_24dp"
-            android:title="Poems" />
+            android:title="@string/poems" />
         <item
             android:id="@+id/nav_films"
             android:icon="@drawable/ic_video_library_black_24dp"
-            android:title="Films" />
+            android:title="@string/films" />
         <item
             android:id="@+id/nav_comedy"
             android:icon="@drawable/ic_mood_black_24dp"
-            android:title="Comedy" />
+            android:title="@string/comedy" />
     </group>
     <group>
 
-        <item android:title="African">
+        <item android:title="@string/african">
             <menu>
                 <item
                 android:id="@+id/nav_folkSongs"
                 android:icon="@drawable/ic_library_music_black_24dp"
-                android:title="Folk Songs" />
+                android:title="@string/folk_songs" />
                 <item
                 android:id="@+id/nav_dances"
                 android:icon="@drawable/ic_ondemand_video_black_24dp"
-                android:title="Dances" />
+                android:title="@string/dances" />
             </menu>
         </item>
 
-        <item android:title="Communicate">
+        <item android:title="@string/communicate">
             <menu>
                 <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/share" />
                 <item
                 android:id="@+id/nav_rating"
                 android:icon="@drawable/ic_star_black_24dp"
 
-                android:title="Rate us" />
+                android:title="@string/rate_us" />
             </menu>
         </item>
     </group>
