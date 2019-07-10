@@ -1,5 +1,6 @@
 package com.pylanconsultancy.drama;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -27,7 +29,7 @@ public class Landing extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     //Web api url to
-    public static final String DATA_URL = "http://127.0.0.1/movies.php";
+    public static final String DATA_URL = "";
     public TextView sectionHeading;
 
     //Data values to retrieve from Json.
@@ -54,17 +56,22 @@ public class Landing extends AppCompatActivity
         setSupportActionBar(toolbar);
         sectionHeading =findViewById(R.id.sectionTitle);
 
-        gridView = findViewById(R.id.customgrid);
+        //gridView = findViewById(R.id.customgrid);
+        final GridView gridview = findViewById(R.id.customgrid);
+        gridview.setAdapter(new moviesAdapter(this));
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent i = new Intent(getApplicationContext(), FullVideoActivity.class);
+                i.putExtra("id", position);
+                startActivity(i);
+            }
+        });
 
         movies = new ArrayList<>();
         movie_url = new ArrayList<>();
 
         textureView = findViewById(R.id.adTextureView);
         textureView.getSurfaceTextureListener();
-
-
-
-
 
 
         //Calling the getData method

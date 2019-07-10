@@ -29,4 +29,6 @@
     <string name="rate_us">Rate us</string>
     <string name="dances">Dances</string>
     <string name="movies">Movies</string>
+    <string name="no_movies_icon">No movies icon</string>
+    <string name="no_movies">No movies</string>
 </resources>
