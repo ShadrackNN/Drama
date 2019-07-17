@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/firebackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Landing"
+    tools:showIn="@layout/app_bar_landing"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fillViewport="true"
+        android:layout_height="match_parent">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/relativeLayoutLanding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextureView
+                android:id="@+id/adTextureView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+            <TextView
+                android:id="@+id/sectionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/adTextureView"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorAccent"
+                android:text="@string/moviesHeader"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <GridView
+                android:id="@+id/customgrid"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/sectionTitle"
+                android:layout_marginTop="5dp"
+                android:nestedScrollingEnabled="true"
+                android:layout_marginBottom="5dp"
+                android:numColumns="auto_fit" />
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_main_name">Kenyan TV Drama</string>
-    <string name="app_name">Movies</string>
+    <string name="app_main_name">Movies</string>
+    <string name="app_name">TV Career Launch</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Kenyan Drama TV</string>

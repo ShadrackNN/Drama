@@ -11,10 +11,11 @@ import com.squareup.picasso.Picasso;
 
 public class moviesAdapter extends BaseAdapter {
     private Context mContext;
-    int imageTotal = 5;
+    int imageTotal = 6;
 
     public static String[] mThumbIds = {
             "http://www.feisaconstruction.co.ke/android/movies/pic.jpg",
+            "http://www.feisaconstruction.co.ke/android/movies/pic1.jpg",
             "http://www.feisaconstruction.co.ke/android/movies/pic2.jpg",
             "http://www.feisaconstruction.co.ke/android/movies/pic3.jpg",
             "http://www.feisaconstruction.co.ke/android/movies/pic4.jpg",
@@ -55,6 +56,7 @@ public class moviesAdapter extends BaseAdapter {
         String url = String.valueOf(getItem(position));
         Picasso.with(mContext)
                 .load(url)
+                .placeholder(R.drawable.loader)
                 .fit()
                 .centerCrop().into(imageView);
         return imageView;

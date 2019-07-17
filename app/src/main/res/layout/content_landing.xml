@@ -28,7 +28,7 @@
             <TextureView
                 android:id="@+id/adTextureView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="150dp" />
             <TextView
                 android:id="@+id/sectionTitle"
                 android:layout_width="match_parent"
@@ -42,14 +42,23 @@
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
-            <GridView
-                android:id="@+id/customgrid"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/sectionTitle"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:numColumns="2" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <GridView
+                    android:id="@+id/customgrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sectionTitle"
+                    android:paddingRight="@dimen/default_gap"
+                    android:paddingLeft="@dimen/default_gap"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:numColumns="auto_fit" />
+
+            </androidx.core.widget.NestedScrollView>
 
         </RelativeLayout>
 
