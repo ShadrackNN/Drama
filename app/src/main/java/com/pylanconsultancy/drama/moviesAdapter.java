@@ -53,9 +53,9 @@ public class moviesAdapter extends BaseAdapter {
         } else {
             imageView = (ImageView) convertView;
         }
-        String url = String.valueOf(getItem(position));
+        Object url = getItem(position);
         Picasso.with(mContext)
-                .load(url)
+                .load((String) url)
                 .placeholder(R.drawable.loader)
                 .fit()
                 .centerCrop().into(imageView);

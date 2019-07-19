@@ -43,10 +43,7 @@ public class Landing extends AppCompatActivity
     // Log tag.
     private static final String TAG = Landing.class.getName();
 
-    // Asset video file name.
-    private static final String FILE_NAME = "kanyoni.mp4";
-
-    // MediaPlayer instance to control playback of video file.
+   // MediaPlayer instance to control playback of video file.
     private MediaPlayer mMediaPlayer;
 
     //Data values to retrieve from Json.
@@ -228,7 +225,7 @@ public class Landing extends AppCompatActivity
 
         try {
             //AssetFileDescriptor to open video file from assets folder.
-            AssetFileDescriptor afd = getAssets().openFd(FILE_NAME);
+            AssetFileDescriptor afd = getAssets().openFd(DATA_URL);
 
             //MediaPlayer object is used to control video file, so we are packaging things like surface and data source inside.
             mMediaPlayer = new MediaPlayer();
