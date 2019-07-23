@@ -44,22 +44,8 @@ public class moviesAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        ImageView imageView;
-        if (convertView == null) {
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(480, 480));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
-        }
-        Object url = getItem(position);
-        Picasso.with(mContext)
-                .load((String) url)
-                .placeholder(R.drawable.loader)
-                .fit()
-                .centerCrop().into(imageView);
-        return imageView;
+
+        return convertView;
     }
 }
 
