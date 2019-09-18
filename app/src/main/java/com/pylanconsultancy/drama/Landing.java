@@ -70,26 +70,6 @@ public class Landing extends AppCompatActivity
         setSupportActionBar(toolbar);
         sectionHeading =findViewById(R.id.sectionTitle);
 
-        initView();
-
-        //gridView = findViewById(R.id.customgrid);
-        final GridView gridview = findViewById(R.id.customgrid);
-        gridview.setAdapter(new moviesAdapter(this));
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent i = new Intent(getApplicationContext(), FullVideoActivity.class);
-                i.putExtra("id", position);
-                startActivity(i);
-            }
-        });
-
-        movies = new ArrayList<>();
-        movie_url = new ArrayList<>();
-
-        textureView = findViewById(R.id.adTextureView);
-        textureView.setSurfaceTextureListener(this);
-
-        //Calling the getData method
         getData();
 
 
@@ -221,53 +201,9 @@ public class Landing extends AppCompatActivity
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int width, int height) {
-        Surface surface = new Surface(surfaceTexture);
 
-        try {
-            //AssetFileDescriptor to open video file from assets folder.
-            AssetFileDescriptor afd = getAssets().openFd(DATA_URL);
 
-            //MediaPlayer object is used to control video file, so we are packaging things like surface and data source inside.
-            mMediaPlayer = new MediaPlayer();
-            mMediaPlayer.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
 
-            mMediaPlayer.setDataSource(getApplicationContext(), Uri.parse(DATA_URL));
-            mMediaPlayer.setSurface(surface);
-
-            //We also set looping flag to true, to make video automatically restarts when it is over.
-            mMediaPlayer.setLooping(true);
-
-            //The last part is to set onPreparedListener and call MediaPlayer.prepareAsync() method which fire onPrepared event when we can start video playback.
-            mMediaPlayer.prepareAsync();
-
-            // Play video when the media source is ready for playback.
-            mMediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(MediaPlayer mediaPlayer) {
-                    mediaPlayer.start();
-                }
-            });
-
-        } catch (IllegalArgumentException e) {
-            Log.d(TAG, e.getMessage());
-        } catch (SecurityException e) {
-            Log.d(TAG, e.getMessage());
-        } catch (IllegalStateException e) {
-            Log.d(TAG, e.getMessage());
-        } catch (IOException e) {
-            Log.d(TAG, e.getMessage());
-        }
-    }
-
-    //Memory clean up
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (mMediaPlayer != null) {
-            mMediaPlayer.stop();
-            mMediaPlayer.release();
-            mMediaPlayer = null;
-        }
     }
 
     @Override
