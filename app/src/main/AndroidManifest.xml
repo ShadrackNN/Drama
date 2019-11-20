@@ -32,6 +32,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Poems">
+
+        </activity>
+        <activity android:name=".Comedy" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Dances" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Films" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".movies" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity android:name=".Folksongs" android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
 
     </application>
 

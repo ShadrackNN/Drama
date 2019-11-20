@@ -1,66 +1,28 @@
 package com.pylanconsultancy.drama;
 
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
 import android.graphics.SurfaceTexture;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import android.util.Log;
-import android.view.Surface;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.TextView;
 
-import com.google.android.material.navigation.NavigationView;
-
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.TextView;
-import com.pylanconsultancy.drama.movies;
-
-import java.io.IOException;
-import java.util.ArrayList;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 
 public class Landing extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TextureView.SurfaceTextureListener {
 
-    //Web api url to
-    public static final String DATA_URL = "www.feisaconstruction.co.ke/android/movies/kanyoni.mp4";
     public TextView sectionHeading;
-
-    // Log tag.
-    private static final String TAG = Landing.class.getName();
-
-   // MediaPlayer instance to control playback of video file.
-    private MediaPlayer mMediaPlayer;
-
-    //Data values to retrieve from Json.
-    public static final String TAG_Movie_Name = "PO_Movie";
-    public static final String TAG_Name = "PO_Name";
-    public static final String TAG_Advert ="PO_Advert";
-
-
-    //GridView Object
-    private GridView gridView;
-
-    public TextureView textureView;
-
-    //ArrayList for Storing video urls and titles
-    private static ArrayList<String> movies;
-    private static ArrayList<String> movie_url;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,12 +30,9 @@ public class Landing extends AppCompatActivity
         setContentView(R.layout.activity_landing);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        sectionHeading =findViewById(R.id.sectionTitle);
+        //sectionHeading =findViewById(R.id.sectionTitle);
 
         getData();
-
-
-
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -147,51 +106,61 @@ public class Landing extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        switch (id){
 
-        if (id == R.id.nav_poems) {
-            // Take user to Poems page
-            //setContentView(R.layout.activity_poems);
-
-
-        } else if (id == R.id.nav_films) {
-            // Take user to Films page
-            //setContentView(R.layout.activity_films);
+            case R.id.nav_poems:
+                // Take user to Poems page
+                Intent poemsIntent = new Intent(Landing.this, Poems.class);
+                startActivity(poemsIntent);
+                break;
 
 
-        } else if (id == R.id.nav_comedy) {
-            // Take user to Comedy page
-            //setContentView(R.layout.activity_comedy);
+            case R.id.nav_films:
+                // Take user to Films page
+                Intent filmsIntent = new Intent(Landing.this, Films.class);
+                startActivity(filmsIntent);
+                break;
 
 
-        } else if (id == R.id.nav_folkSongs) {
-            // Take user to Folk Songs UI
-            //setContentView(R.layout.activity_folksongs);
+            case R.id.nav_comedy:
+                // Take user to Comedy page
+                Intent comedyIntent = new Intent(Landing.this, Comedy.class);
+                startActivity(comedyIntent);
+                break;
 
 
-        } else if (id == R.id.nav_dances) {
-            // Take user to Folk Dances page
-            //setContentView(R.layout.activity_dances);
+            case R.id.nav_folkSongs:
+                // Take user to Folk Songs UI
+                Intent folksongsIntent = new Intent(Landing.this, Folksongs.class);
+                startActivity(folksongsIntent);
+                break;
 
-        }  else if (id == R.id.nav_share) {
-            // Provide user with options through which they can share app.
-            //Set app url in Play Store in set text
 
-        } else if (id == R.id.nav_rating) {
-            //Provide user with Google's rating UI or take user to Google Play store and focus on rating section
+            case R.id.nav_dances:
+                // Take user to Folk Dances page
+                Intent dancesIntent = new Intent(Landing.this, Dances.class);
+                startActivity(dancesIntent);
+                break;
 
-        }
+            case R.id.nav_share:
+                // Provide user with options through which they can share app.
+                //Set app url in Play Store in set text
+                break;
+
+            case  R.id.nav_rating:
+                //Provide user with Google's rating UI or take user to Google Play store and focus on rating section
+                break;
+
+            }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-    private void initView() {
-
-    }
 
     public void getData(){
 
